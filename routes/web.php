@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Temp Route
 Route::get('/', function () {
-    return view('layouts.dashboard');
+    return view('login');
+});
+
+Route::get('/admin', function () {
+    return view('layouts.admin');
+});
+
+Route::get('/pegawai', function () {
+    return view('layouts.pegawai');
 });
