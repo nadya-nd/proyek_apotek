@@ -25,5 +25,5 @@ Route::get('/admin', function () {
 });
 
 Route::get('/pegawai', function () {
-    return view('layouts.pegawai');
+    return view('layouts.admin2');
 });
