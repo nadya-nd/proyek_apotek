@@ -27,3 +27,15 @@ Route::get('/admin', function () {
 Route::get('/pegawai', function () {
     return view('layouts.admin2');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/dashboard2', function () {
+    return view('dashboard2');
+});
+
+Route::get('/pengelolaan-chat', function () {
+    return view('pengelolaan-chat');
+});
