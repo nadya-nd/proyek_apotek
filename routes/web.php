@@ -39,3 +39,10 @@ Route::get('/dashboard2', function () {
 Route::get('/pengelolaan-chat', function () {
     return view('pengelolaan-chat');
 });
+
+Route::get('/data-obat', function () {
+    return view('data-obat');
+});
+Route::get('/data-member', function () {
+    return view('data-member');
+});
