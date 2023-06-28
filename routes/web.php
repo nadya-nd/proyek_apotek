@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,26 +16,6 @@ use App\Http\Controllers\AdminController;
 */
 
 // Temp Route
-Route::get('/', function () {
-    return view('login');
-});
-
-Route::get('/admin', function () {
-    return view('layouts.admin');
-});
-
-Route::get('/pegawai', function () {
-    return view('layouts.admin2');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/dashboard2', function () {
-    return view('dashboard2');
-});
-
 Route::get('/pengelolaan-chat', function () {
     return view('pengelolaan-chat');
 });
@@ -46,3 +26,11 @@ Route::get('/data-obat', function () {
 Route::get('/data-member', function () {
     return view('data-member');
 });
+
+// permanen route
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('dasboard');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard-admin', [AdminController::class, 'showPageAdmin'])->middleware('role:1', 'auth');
+Route::get('/dashboard-pegawai', [AdminController::class, 'showPagePegawai'])->middleware('role:0', 'auth');
