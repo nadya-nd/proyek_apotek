@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PembelianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,13 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('layouts.admin');
+    return view('admin');
 });
 
 Route::get('/pegawai', function () {
     return view('layouts.admin2');
 });
+
+Route::get('/detailpembelian2', [PembelianController::class, 'detailpembelian2']);
+Route::get('/rekap-pembelian2', [PembelianController::class, 'rekappembelian2']);
+

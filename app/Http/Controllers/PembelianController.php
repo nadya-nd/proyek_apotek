@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pembelian;
+use App\Models\detailPembelian;
+use App\Models\Obat;
 
 class PembelianController extends Controller
 {
     //
-    public function pembelian2()
+    public function detailpembelian2()
     {
-        $pembelians = Pembelian::all(); // Mengambil semua data pembelian menggunakan model Pembelian
+        // $detailpembelians = detailPembelian::all(); // Mengambil semua data pembelian menggunakan model Pembelian
+        $detailpembelians = detailPembelian::with('Obat')->find($id);
     
-        return view('layouts.pegawai.pembelian2', compact('pembelians'));
+        return view('pegawai.detail-pembelian2', compact('detailpembelians'));
     }
 
     public function rekappembelian2()
@@ -21,7 +24,7 @@ class PembelianController extends Controller
             ->groupBy('id_member', 'id_pembelian')
             ->get();
 
-        return view('layouts.pegawai.rekap-pembelian2', compact('rekapPembelian'));
+        return view('pegawai.rekap-pembelian2', compact('rekapPembelian'));
     }
 
     

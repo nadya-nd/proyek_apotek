@@ -22,5 +22,4 @@ class Pembelian extends Model
         return $this->belongsTo(Pelanggan::class, 'id_member');
     }
 
-
 }
