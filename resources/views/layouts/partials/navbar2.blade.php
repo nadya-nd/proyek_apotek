@@ -48,7 +48,9 @@
                     <div class="avatar mr-1">
                         <img src="dist/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
                     </div>
-                    <div class="d-none d-md-block d-lg-inline-block">Hi, Pegawai</div>
+                    <div class="d-none d-md-block d-lg-inline-block">
+                        <p>{{ auth()->user()->name }}</p>
+                    </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>

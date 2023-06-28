@@ -11,8 +11,5 @@ class AdminController extends Controller
         return view('dashboard-admin');
     }
 
-    public function showPagePegawai() {
-        return view('dashboard-pegawai');
-    }
 
 }

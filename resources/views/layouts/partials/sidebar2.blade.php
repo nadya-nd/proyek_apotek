@@ -8,7 +8,7 @@
     <ul class="menu">
         
         <li class="sidebar-item {{ request()->is('dashboard2') ? 'active' : '' }} ">
-            <a href="dashboard2" class='sidebar-link'>
+            <a href="{{ route('dashboard2') }}" class='sidebar-link'>
                 <i data-feather="home" width="20"></i> 
                 <span>Dashboard</span>
             </a>
@@ -21,11 +21,11 @@
             </a>
             <ul class="submenu {{ request()->is('data-obat','data-member') ? 'active' : '' }}">
                 <li>
-                    <a href="data-obat">Data Obat</a>
+                    <a href="{{ route('kelola-obat2') }}">Data Obat</a>
                 </li>                       
                 <li>                       
                 <li>
-                    <a href="data-member">Data Member</a>
+                    <a href="{{ route('kelola-member2') }}">Data Member</a>
                 </li>
             </ul>
         </li>
@@ -38,7 +38,7 @@
         </li>
                 
         <li class="sidebar-item {{ request()->is('pengelolaan-chat') ? 'active' : '' }} ">
-            <a href="pengelolaan-chat" class='sidebar-link'>
+            <a href="{{ route('kelola-chat2') }}" class='sidebar-link'>
                 <i data-feather="file-text" width="20"></i> 
                 <span>Pengelolaan Chat</span>
             </a>                  
