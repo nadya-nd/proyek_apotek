@@ -28,5 +28,4 @@ Route::get('/data-member', [PegawaiController::class, 'dataMemberPegawai'])->mid
 Route::get('/pengelolaan-chat', [PegawaiController::class, 'kelolaChatPegawai'])->middleware('role:0', 'auth')->name('kelola-chat2');
 
 Route::resource('obat', MedicineController::class);
-Route::post('/obat', [MedicineController::class, 'store'])->name('obat.store');
 
