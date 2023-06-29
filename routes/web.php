@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\MedicineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,12 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard-admin', [AdminController::class, 'showPageAdmin'])->middleware('role:1', 'auth')->name('dashboard');
 Route::get('/dashboard-pegawai', [PegawaiController::class, 'showPagePegawai'])->middleware('role:0', 'auth')->name('dashboard2');
-Route::get('/data-obat', [PegawaiController::class, 'dataObatPegawai'])->middleware('role:0', 'auth')->name('kelola-obat2');
+// Route::get('/data-obat', [PegawaiController::class, 'dataObatPegawai'])->middleware('role:0', 'auth')->name('kelola-obat2');
 Route::get('/data-member', [PegawaiController::class, 'dataMemberPegawai'])->middleware('role:0', 'auth')->name('kelola-member2');
 Route::get('/pengelolaan-chat', [PegawaiController::class, 'kelolaChatPegawai'])->middleware('role:0', 'auth')->name('kelola-chat2');
+
+Route::resource('obat', MedicineController::class);
+// Route::get('/obat', [MedicineController::class, 'index'])->name('obat.index');
+// Route::get('/obat/create', [MedicineController::class, 'create'])->name('obat.form');
+// Route::post('/obat', [MedicineController::class, 'store'])->name('obat.store');
+

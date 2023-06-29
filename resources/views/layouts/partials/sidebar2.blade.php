@@ -2,7 +2,7 @@
     <div id="sidebar" class='active'>
         <div class="sidebar-wrapper active">
 <div class="sidebar-header">
-    <img src="dist/assets/images/logo.svg" alt="" srcset="">
+    <img src={{ asset("dist/assets/images/logo.svg") }} alt="" srcset="">
 </div>
 <div class="sidebar-menu">
     <ul class="menu">
@@ -14,14 +14,14 @@
             </a>
         </li>
 
-        <li class="sidebar-item {{ request()->is('data-obat','data-member') ? 'active' : '' }} has-sub">
+        <li class="sidebar-item {{ request()->is('obat','obat/create') ? 'active' : '' }} has-sub">
             <a href="#" class='sidebar-link'>
                 <i data-feather="triangle" width="20"></i> 
                 <span>Data Master</span>
             </a>
-            <ul class="submenu {{ request()->is('data-obat','data-member') ? 'active' : '' }}">
+            <ul class="submenu {{ request()->is('obat','obat/create') ? 'active' : '' }}">
                 <li>
-                    <a href="{{ route('kelola-obat2') }}">Data Obat</a>
+                    <a href="{{ route('obat.index') }}">Data Obat</a>
                 </li>                       
                 <li>                       
                 <li>
