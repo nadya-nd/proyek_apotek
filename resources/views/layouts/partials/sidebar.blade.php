@@ -7,14 +7,14 @@
 <div class="sidebar-menu">
     <ul class="menu">
         
-        <li class="sidebar-item active ">
-            <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item {{ request()->is('admin') ? 'active' : '' }} ">
+            <a href="/admin" class='sidebar-link'>
                 <i data-feather="home" width="20"></i> 
                 <span>Dashboard</span>
             </a>
         </li>
 
-        <li class="sidebar-item  has-sub">
+        <li class="sidebar-item {{ request()->is('admin/njajal') ? 'active' : '' }} has-sub">
             <a href="#" class='sidebar-link'>
                 <i data-feather="triangle" width="20"></i> 
                 <span>Data Master</span>
@@ -39,7 +39,7 @@
                     <a href="">Buat Data Pegawai</a>
                 </li>                        
                 <li>
-                    <a href="">Lihat Data Pegawai</a>
+                    <a href="/admin/njajal">Lihat Data Pegawai</a>
                 </li>
                 
                 <li class='sidebar-title'>Data Member</li>

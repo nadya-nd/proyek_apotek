@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,16 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+
+    //  public function ceksesi(){
+    //     if(Auth::user()->role_id == 1){
+    //         return redirect()->intended('/admin');
+    //     } else {
+            
+    //     }
+        public const PEGAWAI = '/pegawai';
+        public const ADMIN = '/admin';
+
 
     /**
      * The controller namespace for the application.
