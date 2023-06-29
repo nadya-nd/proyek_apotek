@@ -35,16 +35,16 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
 {
-    $validated = $request->validate([
-        'name' => 'required|unique:medicines,name',
+    $validatedData = $request->validate([
+        'name' => 'required|max:255',
         'medicine_stock' => 'required|integer',
         'medicine_prize' => 'required|numeric',
     ]);
 
-    Medicine::create($validated);
+    Medicine::create($validatedData);
 
     // return redirect()->route('obat.index')->with('success', 'Obat berhasil ditambahkan.');
-    return view('obat.index')->with('success', 'Obat berhasil ditambahkan.');
+    return redirect('obat.index');
 }
 
     
