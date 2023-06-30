@@ -25,7 +25,7 @@
                 </li>                       
                 <li>                       
                 <li>
-                    <a href="{{ route('kelola-member2') }}">Data Member</a>
+                    <a href="">Data Member</a>
                 </li>
             </ul>
         </li>

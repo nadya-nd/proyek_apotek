@@ -24,7 +24,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard-admin', [AdminController::class, 'showPageAdmin'])->middleware('role:1', 'auth')->name('dashboard');
 
 Route::get('/dashboard-pegawai', [PegawaiController::class, 'showPagePegawai'])->middleware('role:0', 'auth')->name('dashboard2');
-Route::get('/data-member', [PegawaiController::class, 'dataMemberPegawai'])->middleware('role:0', 'auth')->name('kelola-member2');
 Route::get('/pengelolaan-chat', [PegawaiController::class, 'kelolaChatPegawai'])->middleware('role:0', 'auth')->name('kelola-chat2');
 
 Route::get('/index', [MedicineController::class, 'index'])->name('index');

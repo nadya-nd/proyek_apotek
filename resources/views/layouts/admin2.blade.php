@@ -42,7 +42,7 @@
                         <nav aria-label="breadcrumb" class='breadcrumb-header'>
                             <ol class="breadcrumb">
                                 @section('breadcrumb')
-                                <li class="breadcrumb-item " aria-current="page"><a href="dashboard-donatur">Pegawai</a></li>
+                                <li class="breadcrumb-item " aria-current="page">Pegawai</li>
                                 @show
                             </ol>
                         </nav>
