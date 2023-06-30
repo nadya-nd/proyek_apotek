@@ -22,10 +22,11 @@ Route::post('/login', [LoginController::class, 'login'])->name('dashboard');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard-admin', [AdminController::class, 'showPageAdmin'])->middleware('role:1', 'auth')->name('dashboard');
+
 Route::get('/dashboard-pegawai', [PegawaiController::class, 'showPagePegawai'])->middleware('role:0', 'auth')->name('dashboard2');
-// Route::get('/data-obat', [PegawaiController::class, 'dataObatPegawai'])->middleware('role:0', 'auth')->name('kelola-obat2');
 Route::get('/data-member', [PegawaiController::class, 'dataMemberPegawai'])->middleware('role:0', 'auth')->name('kelola-member2');
 Route::get('/pengelolaan-chat', [PegawaiController::class, 'kelolaChatPegawai'])->middleware('role:0', 'auth')->name('kelola-chat2');
 
-Route::resource('obat', MedicineController::class);
-
+Route::get('/index', [MedicineController::class, 'index'])->name('index');
+Route::get('/form', [MedicineController::class, 'tambahObat'])->name('form');
+Route::post('/tambah-obat', [MedicineController::class, 'insertObat'])->name('tambah-obat');

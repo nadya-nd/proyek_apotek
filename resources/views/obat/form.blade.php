@@ -4,8 +4,8 @@
 
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item " aria-current="page"><a href="{{ route('obat.index') }}">Data Master</a></li>
-    <li class="breadcrumb-item " aria-current="page"><a href="{{ route('obat.index') }}">Data Obat</a></li>
+    <li class="breadcrumb-item " aria-current="page"><a href="{{ route('index') }}">Data Master</a></li>
+    <li class="breadcrumb-item " aria-current="page"><a href="{{ route('index') }}">Data Obat</a></li>
     <li class="breadcrumb-item">Tambah Obat</li>
 @endsection     
 
@@ -18,7 +18,7 @@
             </div>
             <div class="card-content">
             <div class="card-body">
-                <form action="{{ route('obat.index') }}" class="form form-horizontal" method="post">
+                <form action="tambah-obat" class="form form-horizontal" method="post">
                     @csrf
                     <div class="form-body">
                         <div class="row">
@@ -32,13 +32,13 @@
                                 <label>Stok Obat</label>
                             </div>
                             <div class="col-md-8 form-group">
-                                <input type="number" id="stok" class="form-control" name="medicine-stock" placeholder="Stok Obat">
+                                <input type="number" id="stok" class="form-control" name="medicine_stock" placeholder="Stok Obat">
                             </div>
                             <div class="col-md-4">
                                 <label>Harga Obat</label>
                             </div>
                             <div class="col-md-8 form-group">
-                                <input type="number" id="contact-info" class="form-control" name="medicine-price" placeholder="Harga Obat">
+                                <input type="number" id="contact-info" class="form-control" name="medicine_price" placeholder="Harga Obat">
                             </div>
                             <div class="col-sm-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary mr-1 mb-1">Submit</button>

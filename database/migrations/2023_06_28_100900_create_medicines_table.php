@@ -17,7 +17,7 @@ class CreateMedicinesTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('medicine_stock');
-            $table->integer('medice_price');
+            $table->integer('medicine_price');
             $table->timestamps();
         });
     }

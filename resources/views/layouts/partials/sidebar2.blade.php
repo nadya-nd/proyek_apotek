@@ -14,14 +14,14 @@
             </a>
         </li>
 
-        <li class="sidebar-item {{ request()->is('obat','obat/create') ? 'active' : '' }} has-sub">
+        <li class="sidebar-item {{ request()->is('index','form') ? 'active' : '' }} has-sub">
             <a href="#" class='sidebar-link'>
                 <i data-feather="triangle" width="20"></i> 
                 <span>Data Master</span>
             </a>
-            <ul class="submenu {{ request()->is('obat','obat/create') ? 'active' : '' }}">
+            <ul class="submenu {{ request()->is('index','form') ? 'active' : '' }}">
                 <li>
-                    <a href="{{ route('obat.index') }}">Data Obat</a>
+                    <a href="{{ route('index') }}">Data Obat</a>
                 </li>                       
                 <li>                       
                 <li>
