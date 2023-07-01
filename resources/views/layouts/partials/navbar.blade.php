@@ -54,7 +54,10 @@
                     <a class="dropdown-item active" href="#"><i data-feather="mail"></i> Messages</a>
                     <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                    <form action="logout" method="post">
+                        @csrf
+                        <button class="dropdown-item" type="submit"><i data-feather="log-out"></i> Logout</button>
+                    </form>
                 </div>
             </li>
         </ul>

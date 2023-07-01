@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\MedicineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +17,14 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-// Temp Route
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'login'])->name('dashboard');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/admin', function () {
-    return view('layouts.admin');
-});
+Route::get('/dashboard-admin', [AdminController::class, 'showPageAdmin'])->middleware('role:1', 'auth')->name('dashboard');
 
-Route::get('/pegawai', function () {
-    return view('layouts.admin2');
-});
+Route::get('/dashboard-pegawai', [PegawaiController::class, 'showPagePegawai'])->middleware('role:0', 'auth')->name('dashboard2');
+Route::get('/pengelolaan-chat', [PegawaiController::class, 'kelolaChatPegawai'])->middleware('role:0', 'auth')->name('kelola-chat2');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -42,3 +40,6 @@ Route::get('/pengelolaan-chat', function () {
 Route::get('/data-member-pegawai', function () {
     return view('layouts.pegawai.data-member-pegawai');
 });
+Route::get('/index', [MedicineController::class, 'index'])->name('index');
+Route::get('/form', [MedicineController::class, 'tambahObat'])->name('form');
+Route::post('/tambah-obat', [MedicineController::class, 'insertObat'])->name('tambah-obat');
