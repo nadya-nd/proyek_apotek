@@ -25,7 +25,7 @@
                 </li>                       
                 <li>                       
                 <li>
-                    <a href="data-member">Data Member</a>
+                    <a href="data-member-pegawai">Data Member</a>
                 </li>
             </ul>
         </li>

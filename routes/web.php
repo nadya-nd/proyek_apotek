@@ -39,3 +39,6 @@ Route::get('/dashboard2', function () {
 Route::get('/pengelolaan-chat', function () {
     return view('pengelolaan-chat');
 });
+Route::get('/data-member-pegawai', function () {
+    return view('layouts.pegawai.data-member-pegawai');
+});
