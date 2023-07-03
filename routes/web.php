@@ -27,3 +27,14 @@ Route::get('/admin', function () {
 Route::get('/pegawai', function () {
     return view('layouts.admin2');
 });
+
+Route::get('/chat', function () {
+    return view('chat');
+});
+
+Route::get('/tampilpesan', function () {
+        return view('chat');
+});
+
+Route::get('/chat',[ChatController::class, 'index'])->name('pegawai');
+Route::get('/tambahchat',[ChatController::class, 'tambahchat'])->name('tambahchat');

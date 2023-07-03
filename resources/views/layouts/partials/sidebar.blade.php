@@ -83,7 +83,7 @@
                 </li>
                 
                 <li>
-                    <a href="form-element-input-group.html">Buat Template Chat</a>
+                    <a href="chat">Buat Template Chat</a>
                 </li>
                 
                 <li>
