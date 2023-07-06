@@ -9,57 +9,46 @@
 @endsection
 
 @section('content')
-
+    <form action="/rekap-pembelian-filter" method="GET">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="start_date">Start Date:</label>
+                <input type="date" name="start_date" id="start_date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="end_date">End Date:</label>
+                <input type="date" name="end_date" id="end_date" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+    </form>
+      
     <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>ID Member</th>
-                        <th>ID Pembelian</th>
-                        <th>Jumlah Pembelian</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (is_array($rekapPembelian) || is_object($rekapPembelian))
-                        @foreach ($rekapPembelian as $rekap)
-                            <tr>
-                                <td>{{ $rekap['id_member'] }}</td>
-                                <td>
-                                    <ul>
-                                        @if (is_array($rekap['id_pembelian']) || is_object($rekap['id_pembelian']))
-                                            @foreach ($rekap['id_pembelian'] as $idPembelian)
-                                                <li>{{ $idPembelian }}</li>
-                                            @endforeach
-                                        @else
-                                            <li>{{ $rekap['id_pembelian'] }}</li>
-                                        @endif
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul>
-                                        @if (is_array($rekap['jumlah_pembelian']) || is_object($rekap['jumlah_pembelian']))
-                                            @foreach ($rekap['jumlah_pembelian'] as $jumlahPembelian)
-                                                <li>{{ $jumlahPembelian }}</li>
-                                            @endforeach
-                                        @else
-                                            <li>{{ $rekap['jumlah_pembelian'] }}</li>
-                                        @endif
-                                    </ul>
-                                </td>
-                                <td>
-                                    <a href="../detail-pembelian2/{{ $rekap['id_pembelian'] }}" class="btn btn-primary">Detail</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
+        <div class="card mb-3">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
                         <tr>
-                            <td colspan="4">Data rekap pembelian tidak valid</td>
+                            <th>ID Member</th>
+                            <th>ID Pembelian</th>
+                            <th>Jumlah Pembelian</th>
+                            <th>Aksi</th>
                         </tr>
-                    @endif
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                            @foreach ($rekapPembelian as $rekap)
+                                <tr>
+                                    <td>{{ $rekap->id_member }}</td>
+                                    <td>{{ $rekap->id }}</td> 
+                                    <td>{{ $rekap->jumlah_pembelian }}</td>
+                                    <td>
+                                        <a href="../detail-pembelian2/{{ $rekap->id }}" class="btn btn-primary">Detail</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateChat extends Migration
+class CreateDetailObat extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateChat extends Migration
      */
     public function up()
     {
-        Schema::create('chat', function (Blueprint $table) {
+        Schema::create('detail_obat', function (Blueprint $table) {
             $table->id();
-            $table->string('penerima_chat');
-            $table->string('isi_chat');
-            $table->string('notelp_penerima');
+            $table->string("id_member");
+            $table->string("id_obat");
+            $table->string("id_pembelian");
+            $table->string("id_detail_pembelian");
+            $table->date("tgl_dipesan");
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateChat extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chat');
+        Schema::dropIfExists('detail_obat');
     }
 }

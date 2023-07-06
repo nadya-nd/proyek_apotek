@@ -6,7 +6,6 @@
 </div>
 <div class="sidebar-menu">
     <ul class="menu">
-        
         <li class="sidebar-item active ">
             <a href="index.html" class='sidebar-link'>
                 <i data-feather="home" width="20"></i> 
@@ -54,6 +53,7 @@
                 <li>
                     <a href="">Lihat Data Member</a>
                 </li>
+            </li>
             </ul>
         </li>
 

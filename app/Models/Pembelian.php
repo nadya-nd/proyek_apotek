@@ -8,18 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Pembelian extends Model
 {
     use HasFactory;
-    protected $table = 'pembelian'; // Nama tabel di database
-
+    protected $table = 'pembelians'; // Nama tabel di database
+    protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
-        'id_pembelian',
+        'id',
         'id_member',
         'tgl_pembelian',
         'total_harga_pembelian'
     ];
 
-    public function pelanggan()
+    public function detailPembelian()
     {
-        return $this->belongsTo(Pelanggan::class, 'id_member');
+        return $this->hasMany(detailPembelian::class, 'id as id_pembelian');
     }
 
 }

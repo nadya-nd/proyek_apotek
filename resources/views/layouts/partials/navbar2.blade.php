@@ -46,7 +46,7 @@
             <li class="dropdown">
                 <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     <div class="avatar mr-1">
-                        <img src="dist/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                        <img src="/dist/assets/images/avatar/avatar-s-1.png" alt="" srcset="">
                     </div>
                     <div class="d-none d-md-block d-lg-inline-block">Hi, Pegawai</div>
                 </a>
