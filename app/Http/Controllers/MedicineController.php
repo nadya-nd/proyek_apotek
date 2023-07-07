@@ -19,6 +19,7 @@ class MedicineController extends Controller
     public function insertObat(Request $request) {
         // dd($request->all());
         Medicine::create($request->all());
+        // Medicine::updateOrCreate($request->all());
         return redirect()->route('index')->with('success', 'Data Obat Berhasil Ditambahkan');
     }
 }
