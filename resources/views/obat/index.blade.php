@@ -16,8 +16,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('form') }}" class="btn btn-primary">Tambah</a>
+                        <x-button>Tambah</x-button>
                     </div>
+                    {{-- <div class="card-header">
+                        <a href="{{ route('form') }}" class="btn btn-primary">Tambah</a>
+                    </div> --}}
                     <!-- table striped -->
                     <div class="table-responsive">
                         @if ($message = Session::get('success'))
