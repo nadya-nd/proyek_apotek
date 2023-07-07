@@ -2,30 +2,30 @@
     <div id="sidebar" class='active'>
         <div class="sidebar-wrapper active">
 <div class="sidebar-header">
-    <img src="dist/assets/images/logo.svg" alt="" srcset="">
+    <img src={{ asset("dist/assets/images/logo.svg") }} alt="" srcset="">
 </div>
 <div class="sidebar-menu">
     <ul class="menu">
         
         <li class="sidebar-item {{ request()->is('dashboard2') ? 'active' : '' }} ">
-            <a href="dashboard2" class='sidebar-link'>
+            <a href="{{ route('dashboard2') }}" class='sidebar-link'>
                 <i data-feather="home" width="20"></i> 
                 <span>Dashboard</span>
             </a>
         </li>
 
-        <li class="sidebar-item {{ request()->is('data-obat','data-member') ? 'active' : '' }} has-sub">
+        <li class="sidebar-item {{ request()->is('index','form') ? 'active' : '' }} has-sub">
             <a href="#" class='sidebar-link'>
                 <i data-feather="triangle" width="20"></i> 
                 <span>Data Master</span>
             </a>
-            <ul class="submenu {{ request()->is('data-obat','data-member') ? 'active' : '' }}">
+            <ul class="submenu {{ request()->is('index','form') ? 'active' : '' }}">
                 <li>
-                    <a href="data-obat">Data Obat</a>
+                    <a href="{{ route('index') }}">Data Obat</a>
                 </li>                       
                 <li>                       
                 <li>
-                    <a href="data-member">Data Member</a>
+                    <a href="">Data Member</a>
                 </li>
             </ul>
         </li>
@@ -38,7 +38,7 @@
         </li>
                 
         <li class="sidebar-item {{ request()->is('pengelolaan-chat') ? 'active' : '' }} ">
-            <a href="pengelolaan-chat" class='sidebar-link'>
+            <a href="{{ route('kelola-chat2') }}" class='sidebar-link'>
                 <i data-feather="file-text" width="20"></i> 
                 <span>Pengelolaan Chat</span>
             </a>                  
