@@ -29,11 +29,3 @@ Route::get('/admin', function () {
 Route::get('/pegawai', function () {
     return view('layouts.admin2');
 });
-
-
-Route::get('/rekap-pembelian2', [PembelianController::class, 'rekappembelian2']);
-Route::get('/rekap-pembelian-filter', [PembelianController::class, 'rekapPembelian']);
-Route::get('/detail-pembelian2', [PembelianController::class, 'detailpembelian2']);
-Route::get('/detail-pembelian2/{id_pembelian}', [PembelianController::class, 'detailpembelian2'])->name('detailpembelian2');
-
-

@@ -7,44 +7,41 @@
 <div class="sidebar-menu">
     <ul class="menu">
         
-        <li class="sidebar-item ">
-            <a href="index.html" class='sidebar-link'>
+        <li class="sidebar-item {{ request()->is('dashboard2') ? 'active' : '' }} ">
+            <a href="dashboard2" class='sidebar-link'>
                 <i data-feather="home" width="20"></i> 
                 <span>Dashboard</span>
             </a>
         </li>
 
-        <li class="sidebar-item  has-sub">
+        <li class="sidebar-item {{ request()->is('data-obat','data-member') ? 'active' : '' }} has-sub">
             <a href="#" class='sidebar-link'>
                 <i data-feather="triangle" width="20"></i> 
                 <span>Data Master</span>
             </a>
-            <ul class="submenu ">
-                <li class='sidebar-title'>Data Obat</li>                       
-                <li class='sidebar-title'>Data Member</li>
+            <ul class="submenu {{ request()->is('data-obat','data-member') ? 'active' : '' }}">
+                <li>
+                    <a href="data-obat">Data Obat</a>
+                </li>                       
+                <li>                       
+                <li>
+                    <a href="data-member">Data Member</a>
+                </li>
             </ul>
         </li>
 
-        <li class="sidebar-item {{ request()->is('rekap-pembelian2') ? 'active' : '' }}">
-            <a href="../rekap-pembelian2" class='sidebar-link'>
+        <li class="sidebar-item {{ request()->is('rekap-pembelian') ? 'active' : '' }}">
+            <a href="#" class='sidebar-link'>
                 <i data-feather="briefcase" width="20"></i> 
                 <span>Rekap Pembelian</span>
             </a>
         </li>
                 
-        <li class="sidebar-item  has-sub">
-            <a href="#" class='sidebar-link'>
+        <li class="sidebar-item {{ request()->is('pengelolaan-chat') ? 'active' : '' }} ">
+            <a href="pengelolaan-chat" class='sidebar-link'>
                 <i data-feather="file-text" width="20"></i> 
                 <span>Pengelolaan Chat</span>
-            </a>                   
-            <ul class="submenu ">                        
-                <li>
-                    <a href="form-element-input.html">History Chat</a>
-                </li>
-                <li>
-                    <a href="form-element-input.html">Template Chat</a>
-                </li>
-            </ul>                    
+            </a>                  
         </li>      
     </ul>
 </div>
