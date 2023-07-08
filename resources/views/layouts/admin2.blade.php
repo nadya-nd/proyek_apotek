@@ -6,7 +6,7 @@
     <title>{{ config('app.name') }} | @yield('title')</title>
     
     <link rel="stylesheet" href="dist/assets/css/bootstrap.css">
-    
+    <link rel="stylesheet" href="dist/assets/vendors/simple-datatables/style.css">
     <link rel="stylesheet" href="dist/assets/vendors/chartjs/Chart.min.css">
 
     <link rel="stylesheet" href="/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
