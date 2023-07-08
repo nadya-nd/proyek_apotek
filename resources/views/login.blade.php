@@ -12,7 +12,7 @@
         <div class="col-poster">
             <div class="ayat">
                 <h1>
-                    ApotekAI
+                    {{ config('app.name') }}
                 </h1>
             </div>
         </div>

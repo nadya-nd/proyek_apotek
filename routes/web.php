@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PembelianController;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\MedicineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,18 +19,17 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-// Temp Route
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'login'])->name('dashboard');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/admin', function () {
     return view('admin');
 });
+Route::get('/dashboard-admin', [AdminController::class, 'showPageAdmin'])->middleware('role:1', 'auth')->name('dashboard');
 
-Route::get('/pegawai', function () {
-    return view('layouts.admin2');
-});
+Route::get('/dashboard-pegawai', [PegawaiController::class, 'showPagePegawai'])->middleware('role:0', 'auth')->name('dashboard2');
+Route::get('/pengelolaan-chat', [PegawaiController::class, 'kelolaChatPegawai'])->middleware('role:0', 'auth')->name('kelola-chat2');
 
 
 Route::get('/rekap-pembelian2', [PembelianController::class, 'rekappembelian2']);
@@ -36,22 +37,6 @@ Route::get('/rekap-pembelian-filter', [PembelianController::class, 'rekapPembeli
 Route::get('/detail-pembelian2', [PembelianController::class, 'detailpembelian2']);
 Route::get('/detail-pembelian2/{id_pembelian}', [PembelianController::class, 'detailpembelian2'])->name('detailpembelian2');
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/dashboard2', function () {
-    return view('dashboard2');
-});
-
-Route::get('/pengelolaan-chat', function () {
-    return view('pengelolaan-chat');
-});
-
-Route::get('/data-obat', function () {
-    return view('data-obat');
-});
-Route::get('/data-member', function () {
-    return view('data-member');
-});
+Route::get('/index', [MedicineController::class, 'index'])->name('index');
+Route::get('/form', [MedicineController::class, 'tambahObat'])->name('form');
+Route::post('/tambah-obat', [MedicineController::class, 'insertObat'])->name('tambah-obat');
