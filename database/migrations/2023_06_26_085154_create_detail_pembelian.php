@@ -15,11 +15,10 @@ class CreateDetailPembelian extends Migration
     {
         Schema::create('detail_pembelian', function (Blueprint $table) {
             $table->id();
-            $table->string('id_pembelian');
-            // $table->string('id_detail_pembelian');
+            $table->unsignedBigInteger('id_pembelian');
             $table->date('tgl_pembelian');
             $table->date('estimasi_obat_habis');
-            $table->decimal('subtotal_harga', 8, 2);
+            $table->integer('subtotal_harga');
             $table->timestamps();
         });
     }
@@ -32,5 +31,6 @@ class CreateDetailPembelian extends Migration
     public function down()
     {
         Schema::dropIfExists('detail_pembelian');
+
     }
 }

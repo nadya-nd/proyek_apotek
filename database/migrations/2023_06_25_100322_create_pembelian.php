@@ -15,10 +15,9 @@ class CreatePembelian extends Migration
     {
         Schema::create('pembelians', function (Blueprint $table) {
             $table->id();
-            // $table->string('id_pembelian');
-            $table->string('id_member');
+            $table->unsignedBigInteger('id_member');
             $table->date('tgl_pembelian');
-            $table->decimal('total_harga_pembelian', 8, 2);
+            $table->integer('total_harga_pembelian');
             $table->timestamps();
         });
     }

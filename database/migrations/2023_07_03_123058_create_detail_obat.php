@@ -15,10 +15,10 @@ class CreateDetailObat extends Migration
     {
         Schema::create('detail_obat', function (Blueprint $table) {
             $table->id();
-            $table->string("id_member");
-            $table->string("id_obat");
-            $table->string("id_pembelian");
-            $table->string("id_detail_pembelian");
+            $table->unsignedBigInteger("id_member");
+            $table->unsignedBigInteger("id_obat");
+            $table->unsignedBigInteger("id_pembelian");
+            $table->unsignedBigInteger("id_detail_pembelian");
             $table->date("tgl_dipesan");
             $table->timestamps();
         });
