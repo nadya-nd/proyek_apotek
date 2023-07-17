@@ -19,7 +19,12 @@ class PegawaiController extends Controller
         return view('data-member');
     }
 
+    public function rekapPembelian() {
+        return view('rekap-pembelian2');
+    }
+
     public function kelolaChatPegawai() {
         return view('pengelolaan-chat');
     }
+
 }

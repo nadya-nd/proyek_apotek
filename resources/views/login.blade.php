@@ -21,7 +21,7 @@
                 <h1>Masuk</h1>
                 {{-- begin::form --}}
                 <div class="form-login">
-                    <form action="login" method="post">
+                    <form action="/login" method="post">
                         @csrf
                         <!--begin::Email-->
                         <div class="input-control">

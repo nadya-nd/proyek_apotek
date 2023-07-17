@@ -1,6 +1,6 @@
-@extends('layouts.admin2')
+@extends('layouts.admin')
 
-@section('title', 'Pegawai')
+@section('title', 'Detail Pembelian')
 
 @section('breadcrumb')
     @parent

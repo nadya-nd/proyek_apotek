@@ -30,8 +30,8 @@
             </ul>
         </li>
 
-        <li class="sidebar-item {{ request()->is('rekap-pembelian') ? 'active' : '' }}">
-            <a href="#" class='sidebar-link'>
+        <li class="sidebar-item {{ request()->is('rekap-pembelian2') ? 'active' : '' }}">
+            <a href="{{('rekap-pembelian2')}}" class='sidebar-link'>
                 <i data-feather="briefcase" width="20"></i> 
                 <span>Rekap Pembelian</span>
             </a>

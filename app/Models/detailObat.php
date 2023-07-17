@@ -17,7 +17,7 @@ class detailObat extends Model
         'id_obat',
         'id_pembelian',
         'id_detail_pembelian',
-        'id',
+        'tgl_dipesan',
 
     ];
 

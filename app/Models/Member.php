@@ -5,23 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Obat extends Model
+class Member extends Model
 {
     use HasFactory;
-    protected $guarded = [];
-    protected $dates = ['created_at'];
-    protected $table = 'obats'; // Nama tabel di database
+
+    protected $table = 'members'; // Nama tabel di database
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [
         'id',
-        'nama_obat'
+        'user_id',
+        'nama',
+        'no_telepon',
+        'alamat',
+        'status',
     ];
-
-    public function detailObat()
+    public function users()
     {
-        return $this->hasMany(detailObat::class, 'id as id_obat');
+        return $this->belongsTo(User::class, 'user_id as id');
     }
-
 }
-

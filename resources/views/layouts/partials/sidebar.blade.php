@@ -2,8 +2,7 @@
     <div id="sidebar" class='active'>
         <div class="sidebar-wrapper active">
 <div class="sidebar-header">
-    <img src="dist/assets/images/logo.svg" alt="" srcset="">
-</div>
+    <img src={{ asset("dist/assets/images/logo.svg") }} alt="" srcset=""></div>
 <div class="sidebar-menu">
     <ul class="menu">
         
@@ -33,8 +32,8 @@
             </ul>
         </li>
 
-        <li class="sidebar-item {{ request()->is('#') ? 'active' : '' }}">
-            <a href="#" class='sidebar-link'>
+        <li class="sidebar-item {{ request()->is('') ? 'active' : '' }}">
+            <a href="rekap-pembelian" class='sidebar-link'>
                 <i data-feather="briefcase" width="20"></i> 
                 <span>Rekap Pembelian</span>
             </a>

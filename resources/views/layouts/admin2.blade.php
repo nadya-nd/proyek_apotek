@@ -12,6 +12,8 @@
     <link rel="stylesheet" href={{ asset("dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css") }}>
     <link rel="stylesheet" href={{ asset("dist/assets/css/app.css") }}>
     <link rel="shortcut icon" href={{ asset("dist/assets/images/favicon.svg") }}type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('dist/assets/css/filter.css') }}">
+
 </head>
 <body>
     {{-- begin::sidebar --}}

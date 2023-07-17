@@ -11,5 +11,9 @@ class AdminController extends Controller
         return view('dashboard-admin');
     }
 
+    public function rekapPembelian() {
+        return view('rekap-pembelian');
+    }
+
 
 }
